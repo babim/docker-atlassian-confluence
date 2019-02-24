@@ -5,7 +5,7 @@
 
 To quickly get started running a Confluence instance, use the following command:
 ```bash
-docker run --detach --publish 8090:8090 babim/confluence:latest
+docker run --detach --publish 8090:8090 babim/confluence:fixed
 ```
 ```
 volume:

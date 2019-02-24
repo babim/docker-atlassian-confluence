@@ -15,6 +15,9 @@ ENV SOFT_HOME		${CONF_HOME}
 ENV SOFT_INSTALL	${CONF_INSTALL}
 ENV SOFT_VERSION	${CONF_VERSION}
 
+# set visible code
+ENV VISIBLECODE		true
+
 # download option
 RUN apk add --no-cache wget bash && cd / && wget --no-check-certificate https://raw.githubusercontent.com/babim/docker-tag-options/master/z%20SCRIPT%20AUTO/option.sh && \
     chmod 755 /option.sh
@@ -25,10 +28,13 @@ RUN wget --no-check-certificate -O - https://raw.githubusercontent.com/babim/doc
 # install
 RUN wget --no-check-certificate -O - https://raw.githubusercontent.com/babim/docker-tag-options/master/z%20Atlassian/${SOFT}_install.sh | bash
 
+# prepare visible code
+RUN mkdir -p /etc-start && mv ${SOFT_INSTALL} /etc-start/${SOFT}
+
 # Use the default unprivileged account. This could be considered bad practice
 # on systems where multiple processes end up being executed by 'daemon' but
 # here we only ever run one process anyway.
-USER daemon:daemon
+#USER daemon:daemon
 
 # Expose default HTTP connector port.
 EXPOSE 8090 8091 8443
@@ -36,7 +42,7 @@ EXPOSE 8090 8091 8443
 # Set volume mount points for installation and home directory. Changes to the
 # home directory needs to be persisted as well as parts of the installation
 # directory due to eg. logs.
-VOLUME ["${SOFT_HOME}", "${SOFT_INSTALL}/logs"]
+VOLUME ["${SOFT_HOME}", "${SOFT_INSTALL}"]
 
 # Set the default working directory as the installation directory.
 WORKDIR ${SOFT_HOME}
@@ -44,4 +50,4 @@ WORKDIR ${SOFT_HOME}
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 # Run Atlassian as a foreground process by default.
-CMD ["/opt/atlassian/confluence/bin/start-confluence.sh", "-fg"]
+#CMD ["/opt/atlassian/confluence/bin/start-confluence.sh", "-fg"]
