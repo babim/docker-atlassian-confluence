@@ -10,7 +10,7 @@ docker run --detach --publish 8090:8090 babim/confluence:latest
 ```
 volume:
 /var/atlassian/confluence
-/opt/atlassian/confluence
+/opt/atlassian/confluence/logs
 ```
 
 Then simply navigate your preferred browser to `http://[dockerhost]:8090` and finish the configuration.
