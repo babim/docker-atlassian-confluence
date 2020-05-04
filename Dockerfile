@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:debian-slim
+FROM adoptopenjdk/openjdk11:debian
 
 # Configuration variables.
 ENV SOFT		confluence
