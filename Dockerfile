@@ -1,9 +1,9 @@
-FROM openjdk:8
+FROM openjdk:11
 
 # Configuration variables.
 ENV SOFT		confluence
 #ENV SOFTSUB		core
-ENV OPENJDKV		8
+ENV OPENJDKV		11
 ENV CONF_HOME		/var/atlassian/${SOFT}
 ENV CONF_INSTALL	/opt/atlassian/${SOFT}
 ENV CONF_VERSION	7.13.1
