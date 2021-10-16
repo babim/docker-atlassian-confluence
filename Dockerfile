@@ -1,4 +1,4 @@
-#FROM adoptopenjdk/openjdk8:debian-slim
+FROM adoptopenjdk/openjdk8:debian-slim
 #FROM openjdk:8
 #FROM adoptopenjdk/openjdk11:debian-slim
 
