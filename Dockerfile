@@ -1,5 +1,5 @@
-#FROM adoptopenjdk/openjdk8:debian-slim
-FROM openjdk:17-slim-buster
+FROM adoptopenjdk/openjdk8:debian-slim
+#FROM openjdk:8
 #FROM adoptopenjdk/openjdk11:debian-slim
 
 # Configuration variables.
