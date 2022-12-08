@@ -1,5 +1,5 @@
 #FROM adoptopenjdk/openjdk8:debian-slim
-FROM openjdk:17
+FROM openjdk:17-bulleye
 #FROM adoptopenjdk/openjdk11:debian-slim
 
 # Configuration variables.
