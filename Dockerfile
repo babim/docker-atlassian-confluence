@@ -8,7 +8,7 @@ ENV SOFT		confluence
 ENV OPENJDKV		11
 ENV CONF_HOME		/var/atlassian/${SOFT}
 ENV CONF_INSTALL	/opt/atlassian/${SOFT}
-ENV CONF_VERSION	8.1.0
+ENV CONF_VERSION	8.2.2
 
 ENV JAVA_CACERTS	$JAVA_HOME/jre/lib/security/cacerts
 ENV CERTIFICATE		$CONF_HOME/certificate
