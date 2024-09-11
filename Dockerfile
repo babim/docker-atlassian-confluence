@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk17:alpine
+FROM adoptopenjdk/openjdk8:alpine
 
 # Configuration variables.
 ENV SOFT			confluence
@@ -6,7 +6,7 @@ ENV SOFT			confluence
 ENV OPENJDKV		17
 ENV CONF_HOME		/var/atlassian/${SOFT}
 ENV CONF_INSTALL	/opt/atlassian/${SOFT}
-ENV CONF_VERSION	10.0.0
+ENV CONF_VERSION	9.0.0
 
 ENV JAVA_CACERTS	$JAVA_HOME/jre/lib/security/cacerts
 ENV CERTIFICATE		$CONF_HOME/certificate
