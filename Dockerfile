@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk8:alpine
+FROM adoptopenjdk/openjdk17:alpine
 
 # Configuration variables.
 ENV SOFT			confluence
