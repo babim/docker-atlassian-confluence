@@ -1,10 +1,10 @@
 #FROM adoptopenjdk/openjdk11:debian-slim
-FROM eclipse-temurin:17
+FROM eclipse-temurin:21-noble
 
 # Configuration variables.
-ENV SOFT		confluence
+ENV SOFT			confluence
 #ENV SOFTSUB		core
-ENV OPENJDKV		17
+ENV OPENJDKV		21
 ENV CONF_HOME		/var/atlassian/${SOFT}
 ENV CONF_INSTALL	/opt/atassian/${SOFT}
 ENV CONF_VERSION	9.0.3
