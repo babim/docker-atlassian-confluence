@@ -1,11 +1,11 @@
 #FROM adoptopenjdk/openjdk8:debian-slim
 #FROM openjdk:8
-FROM eclipse-temurin:21
+FROM eclipse-temurin:17-noble
 
 # Configuration variables.
 ENV SOFT			confluence
 #ENV SOFTSUB		core
-ENV OPENJDKV		21
+ENV OPENJDKV		17
 ENV CONF_HOME		/var/atlassian/${SOFT}
 ENV CONF_INSTALL	/opt/atlassian/${SOFT}
 ENV CONF_VERSION	9.0.3
@@ -50,7 +50,8 @@ VOLUME ["${SOFT_HOME}", "${SOFT_INSTALL}"]
 # Set the default working directory as the installation directory.
 WORKDIR ${SOFT_HOME}
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["/docker-entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/tini", "--"]
 
 # Run Atlassian as a foreground process by default.
 #CMD ["/opt/atlassian/confluence/bin/start-confluence.sh", "-fg"]
