@@ -50,7 +50,8 @@ VOLUME ["${SOFT_HOME}", "${SOFT_INSTALL}"]
 # Set the default working directory as the installation directory.
 WORKDIR ${SOFT_HOME}
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["/docker-entrypoint.sh"]
+ENTRYPOINT ["/usr/bin/tini", "--"]
 
 # Run Atlassian as a foreground process by default.
 #CMD ["/opt/atlassian/confluence/bin/start-confluence.sh", "-fg"]
